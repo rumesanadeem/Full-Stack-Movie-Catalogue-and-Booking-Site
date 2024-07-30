@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>All-Time Classics - Movie Review Web</title>
+    <meta name="description" content="Browse our extensive catalogue of movies.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/catalogue.css">
+    <meta name="theme-color" content="#2A3F54">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">ES Movies</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><button class="button">Home</button></a></li>
+            <li><a href="catalogue.html"><button class="button">Catalogue</button></a></li>
+            <li><a href="about.html"><button class="button">About</button></a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button onclick="search()">🔍</button>
+        </div>
+    </nav>
+</header>
+<main class="content">
+    <h1>Search For Your Movie</h1>
+    <div class="container-with-buttons">
+    <button id="left-scroll" class="scroll-button left hidden" onclick="scrollHorizontally(-1, 'classics-container')">&#10094;</button> <!-- Left arrow button -->
+    <div class="movie-scroll-container" id="classics-container">
+    </div>
+    <button id="right-scroll" class="scroll-button right hidden" onclick="scrollHorizontally(1, 'classics-container')">&#10095;</button> <!-- Right arrow button -->
+    </div>
+</main>
+<script src="js/catalogue.js"></script>
+<footer>
+    <p>&copy; 2024 Movie Review Web. All rights reserved.</p>
+</footer>
+</body>
+</html>

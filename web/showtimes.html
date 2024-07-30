@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ES Movies</title>
+    <meta name="description" content="Browse our extensive catalogue of movies.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/showtimes.css">
+    <meta name="theme-color" content="#2A3F54">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">ES Movies</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><button class="button">Home</button></a></li>
+            <li><a href="catalogue.html"><button class="button">Catalogue</button></a></li>
+            <li><a href="about.html"><button class="button">About Us</button></a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button onclick="search()">🔍</button>
+        </div>
+    </nav>
+</header>
+<main class="content">
+    <div class="details-form-container">
+        <div class="movie-details">
+            <div class="poster">
+                <img id="poster" src="../src/images/dead_poets_society.jpg" alt="Dead Poets Society">
+            </div>
+            <div class="details">
+                <h1 id="title">Movie Title</h1>
+                <p id="genre"><strong>Genre:</strong> ...</p>
+                <p id="year"><strong>Year:</strong> Release Year</p>
+                <p id="plot"><strong>Plot:</strong> A brief plot description goes here.</p>
+                <p id="runtime"><strong>Runtime:</strong> ...</p>
+                <p id="rating"><strong>Rating:</strong> 4.8</p>
+                <div id="showTimes">
+                    <button class="showTimeButton" onclick="selectShowtime('14:10')">2:10</button>
+                    <button class="showTimeButton" onclick="selectShowtime('15:30')">3:30</button>
+                    <button class="showTimeButton" onclick="selectShowtime('17:00')">5:00</button>
+                    <button class="showTimeButton" onclick="selectShowtime('19:00')">7:00</button>
+                    <button class="showTimeButton" onclick="selectShowtime('23:00')">11:00</button>
+                    <div id="showtimeForm">
+                        <p id="message"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="movie-form" id="movie-form-booking" style="display: none">
+            <span onclick="closeBox()" id="closeBtn">X</span>
+            <div class="form-group">
+                <label for="movie-title">Movie Title:</label>
+                <input type="text" id="movie-title" name="movie-title" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="showtime-date">Showtime Date:</label>
+                <select id="showtime-date" name="showtime-date" required>
+                    <option value="">Select a Date</option>
+                    <option value="2024-04-20">April 20, 2024</option>
+                    <option value="2024-04-21">April 21, 2024</option>
+                    <option value="2024-04-22">April 22, 2024</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="">Select a Location</option>
+                    <option value="new_york">New York</option>
+                    <option value="los_angeles">Los Angeles</option>
+                    <option value="chicago">Chicago</option>
+                </select>
+            </div>
+            <button id="submitButton" onclick="bookShowTime()" >Submit</button>
+            <div id="submitForm">
+                <p id="submitMessage"></p>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="js/showtimes.js"></script>
+<footer>
+    <p>&copy; 2024 ES MOVIES. All rights reserved.</p>
+</footer>
+</body>
+</html>
